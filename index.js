@@ -9,6 +9,11 @@ const userRouter = require("./Routes/login");
 
 app.use("/users", userRouter);
 
+app.get('/',(req,res)=>{
+  res.status(200).send({
+    "Message":"Server Up and Running for DITU-Help-Crunch"
+  })
+})
 app.listen(port, async () => {
   await MDB.connect();
   console.log(`Server litening to port:${port}`);
